@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/acf03e41-3bb6-4729-a95b-8e7625bc5e4d)
+![image](https://github.com/user-attachments/assets/6533769e-dc98-4e64-a4ae-bfacc72f75fc)
+
 
 # Stitch AI: Decentralized Memory Platform for Autonomous AI Agents
 
