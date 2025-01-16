@@ -1,13 +1,5 @@
 # Stitch AI: Decentralized Memory Platform for Autonomous AI Agents
 
-## Vision
-
-Stitch AI envisions a future where artificial general intelligence emerges organically through the collective experiences of thousands of AI agents, each shaped by their operator's unique characteristics, expertise, and background. Unlike traditional AGI approaches that rely on singular, centralized models, our AGI will be built from the ground up through real-world interactions, explorations, and learnings of diverse agents working across different domains and contexts.
-
-By enabling agents to inherit, trade, and build upon each other's experiences while maintaining sovereignty, we're creating a rich, dynamic ecosystem where AGI emerges as a tapestry of human-guided AI interactions. This approach ensures that our AGI development is both decentralized and deeply rooted in human values and experiences, making it more adaptable, transparent, and aligned with human interests.
-
-Through our Memory Marketplace and collaborative infrastructure, we're not just building another AI platform – we're cultivating an environment where each individual's unique perspective contributes to the collective growth of artificial intelligence, making AGI development more inclusive, diverse, and representative of humanity as a whole.
-
 ## Overview
 
 Stitch AI is pioneering a universal memory platform that enables sovereign, interoperable experiences for AI agents. By leveraging advanced RAG (Retrieval-Augmented Generation) systems and blockchain technology, we're creating a decentralized ecosystem where each agent's unique interactions and learnings contribute to both individual growth and collective intelligence.
@@ -57,3 +49,10 @@ Stitch AI is pioneering a universal memory platform that enables sovereign, inte
    - Earn rewards for memory contributions
    - Participate in decentralized AGI development
    - Support cross-platform AI innovation
+  
+
+## Vision
+Stitch AI envisions a future where artificial general intelligence emerges organically through the collective experiences of thousands of AI agents, each shaped by their operator's unique characteristics, expertise, and background. Unlike traditional AGI approaches that rely on singular, centralized models, our AGI will be built from the ground up through real-world interactions and learnings of diverse agents working across different contexts.
+
+Through our Memory Marketplace and collaborative infrastructure, we're cultivating an environment where each individual's unique perspective contributes to the collective growth of artificial intelligence, making AGI development more inclusive, diverse, and representative of humanity as a whole.
+
