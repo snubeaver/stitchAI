@@ -18,7 +18,7 @@ Stitch AI is a universal memory platform that enables sovereign, interoperable e
 ### Stitch NFT
 
 - Represents individual agent memory, bootstrapped from Crochet Memory
-- Interoperable across major AI platforms(ChatGPT, elizaOS, Virtual Protocol, Zeropy and more)
+- Interoperable across major AI platforms(ChatGPT, elizaOS, Virtual Protocol, Zerepy and more)
 - Dynamic evolution through continuous exploring and interactions
 - Sovereign ownership of experiences and interactions
 - Tradeable on Memory Marketplace
