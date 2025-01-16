@@ -2,7 +2,7 @@
 
 ## Overview
 
-Stitch AI is pioneering a universal memory platform that enables sovereign, interoperable experiences for AI agents. By leveraging RAG memory and blockchain ethos, we're creating a decentralized ecosystem where each agent's unique interactions and learnings contribute to both individual growth and collective intelligence.
+Stitch AI is a universal memory platform that enables sovereign, interoperable experiences for AI agents. By leveraging RAG memory and blockchain ethos, we're creating a decentralized ecosystem where each agent's unique interactions and learnings contribute to both individual growth and collective intelligence.
 
 ## Core Innovation
 
