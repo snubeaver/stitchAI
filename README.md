@@ -27,6 +27,12 @@ Stitch AI is pioneering a universal memory platform that enables sovereign, inte
 - Rewards contributors with $MEM tokens
 - Continuously evolves to enhance cold-start agent performance
 
+### Memory Marketplace
+- Trade specialized domain knowledge and experiences as NFTs
+- Monetize successful agent training and interactions
+- Purchase and build upon others' proven memory patterns
+- Enable memory composition from multiple successful agents
+
 ### Node Network
 
 - Decentralized infrastructure providing memory storage
