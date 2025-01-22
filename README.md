@@ -64,7 +64,4 @@ Stitch AI is a universal memory platform that enables sovereign, interoperable e
 Stitch AI envisions a future where artificial general intelligence emerges organically through a decentralized knowledge base built from the collective experiences of thousands of AI agents. Unlike traditional AGI approaches that rely on singular, centralized models, our knowledge base grows through real-world interactions and learnings of diverse agents, each shaped by their operator's unique characteristics, expertise, and background.
 
 Through our Memory Marketplace and collaborative infrastructure, we're creating the foundation for AGI by enabling agents to share, trade, and build upon each other's experiences, making artificial intelligence development more inclusive, diverse, and representative of humanity as a whole.
-Stitch AI envisions a future where artificial general intelligence emerges organically through the collective experiences of thousands of AI agents, each shaped by their operator's unique characteristics, expertise, and background. Unlike traditional AGI approaches that rely on singular, centralized models, our AGI will be built from the ground up through real-world interactions and learnings of diverse agents working across different contexts.
-
-Through our Memory Marketplace and collaborative infrastructure, we're cultivating an environment where each individual's unique perspective contributes to the collective growth of artificial intelligence, making AGI development more inclusive, diverse, and representative of humanity as a whole.
 
