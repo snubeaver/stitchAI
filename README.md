@@ -6,7 +6,7 @@
 
 ## Overview
 
-Stitch AI is creating the standardized protocol and marketplace for AI agent memories. By establishing a common format for storing and sharing agent experiences, domain knowledge, and interaction patterns, we enable seamless knowledge transfer between different AI platforms and frameworks. Our infrastructure provides the critical post-training knowledge layer that allows agents to preserve their learned experiences, share expertise, and access current domain knowledge - extending far beyond the limitations of static pre-training data.
+Stitch AI is creating the standardized protocol and marketplace for AI agent memories. By establishing a common format for storing and sharing agent experiences, domain knowledge, and interaction patterns, we enable seamless knowledge transfer between different AI platforms and frameworks. Our infrastructure provides the critical **post-training knowledge layer** that allows agents to preserve their learned experiences, share expertise, and access current domain knowledge - extending far beyond the limitations of static pre-training data.
 
 ## Why Memory Matters
 
