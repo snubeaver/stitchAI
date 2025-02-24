@@ -3,6 +3,7 @@ import prettier from 'eslint-config-prettier';
 import tsParser from '@typescript-eslint/parser';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort';
+import reactHooksPlugin from 'eslint-plugin-react-hooks';
 
 export default [
   {
@@ -14,6 +15,7 @@ export default [
       '@typescript-eslint': tsPlugin,
       '@next/next': nextPlugin,
       'simple-import-sort': simpleImportSortPlugin,
+      'react-hooks': reactHooksPlugin,
     },
     languageOptions: {
       parser: tsParser,
@@ -41,6 +43,8 @@ export default [
       '@next/next/no-img-element': 'error',
 
       'react/react-in-jsx-scope': 'off',
+      'react-hooks/rules-of-hooks': 'warn',
+      'react-hooks/exhaustive-deps': 'warn',
 
       'simple-import-sort/imports': 'warn',
       'simple-import-sort/exports': 'warn',
