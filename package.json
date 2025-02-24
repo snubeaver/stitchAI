@@ -2,7 +2,12 @@
   "name": "stitch-ai-app",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "check:lint": "eslint . --ext ts --ext tsx --fix",
+    "check:prettier": "prettier --write --ignore-path .gitignore \"**/*.+(js|jsx|ts|tsx|json)\"",
+    "check:type": "tsc --p ./tsconfig.json --noEmit"
   },
   "dependencies": {
     "@reown/appkit": "^1.6.8",
@@ -38,6 +43,7 @@
     "eslint": "^9.21.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "prettier": "^3.5.2",
     "typescript": "^5.7.3"
