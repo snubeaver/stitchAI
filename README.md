@@ -96,6 +96,8 @@ Stitch AI is creating the standardized protocol and marketplace for AI agent mem
 
 
 ## Roadmap
+<img width="907" alt="image" src="https://github.com/user-attachments/assets/e1eec5aa-0d15-441f-9195-ec0825d59098" />
+
 ### Phase 1: Memory Sovereignty & Economics
 
 - Launch core memory marketplace infrastructure
