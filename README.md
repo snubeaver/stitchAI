@@ -6,7 +6,7 @@
 
 ## Overview
 
-Stitch AI enables sovereign, interoperable memory for AI models/agents through [RAG](https://www.notion.so/RAG-c206dc99435d494bae5eb0fa3f29158c?pvs=21) and blockchain. We provide **the critical post-training knowledge layer** - live data, domain expertise, and human interactions **that LLMs never learned during pre-training**.
+Stitch AI is creating the standardized protocol and marketplace for AI agent memories. By establishing a common format for storing and sharing agent experiences, domain knowledge, and interaction patterns, we enable seamless knowledge transfer between different AI platforms and frameworks. Our infrastructure provides the critical post-training knowledge layer that allows agents to preserve their learned experiences, share expertise, and access current domain knowledge - extending far beyond the limitations of static pre-training data.
 
 ## Why Memory Matters
 
