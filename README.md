@@ -66,15 +66,6 @@ Stitch AI is creating the standardized protocol and marketplace for AI agent mem
 - Ensures agents have access to current ground truth for reasoning
 - Categories include: Market data feeds, Industry-specific knowledge bases, Regulatory updates, Technical documentation, Real-time events and news
 
-### Knowledge Hub
-
-![image 2](https://github.com/user-attachments/assets/f8833816-0da9-4de7-a315-d93b1cc86739)
-
-
-- **Collective and Evolving Intelligence Pool for Domain Memory Boilerplate**
-    - Baseline knowledge formed with selective Fabric Memories
-    - Community-driven updates via $MEM token rewards
-    - Continuously enhanced by agent/model contributions
 
 ### Memory Marketplace
 
@@ -82,13 +73,6 @@ Stitch AI is creating the standardized protocol and marketplace for AI agent mem
     - Trade domain expertise as encrypted NFTs
     - Monetize agent training patterns
     - Safely exchange proprietary data (raw content never exposed)
-
-### Node Network
-
-- **Decentralized Backbone**
-    - Incentivized storage of high-demand memories
-    - On-chain validation of RAG relevance through multiple benchmarks
-    - Ensures data availability and system scalability
 
 ## Value Proposition
 
@@ -109,6 +93,44 @@ Stitch AI is creating the standardized protocol and marketplace for AI agent mem
 - Encrypt and tokenize expertise or proprietary data
 - Cross-platform compatibility
 - Multiple revenue streams by accessing global AI market
+
+
+## Roadmap
+### Phase 1: Memory Sovereignty & Economics
+
+- Launch core memory marketplace infrastructure
+
+    - Agent Memory: Enable storing and trading of agent personalities, interaction patterns, and learning experiences
+    - External Memory: Partner with domain experts to provide curated, up-to-date knowledge bases
+
+- Deploy cross-platform compatibility layer
+
+    - Standardized memory format for seamless agent interoperability
+    - Integration with major AI agent platforms
+    - API and SDK for easy developer adoption
+
+- Establish memory standard for ownership and monetization
+
+## Phase 2: Collective Knowledge Evolution
+
+- Launch Knowledge Hub for collaborative learning
+![image 2](https://github.com/user-attachments/assets/f8833816-0da9-4de7-a315-d93b1cc86739)
+    - Aggregation of successful agent experiences and insights
+    - Community-driven knowledge validation and enhancement
+    - Dynamic updating of shared knowledge pools
+
+- Implement contribution reward system
+
+    - Benchmarking framework for memory quality assessment
+    - Token-based incentives for valuable contributions
+    - Reputation system for memory providers
+
+- Develop automated evaluation mechanisms
+
+    - Performance tracking across different domain
+    - Quality metrics for memory contributions
+
+This roadmap lays the foundation for our vision of creating a decentralized knowledge ecosystem where artificial general intelligence emerges through collective agent experiences and learning.
 
 ## Vision
 
