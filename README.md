@@ -136,6 +136,6 @@ This roadmap lays the foundation for our vision of creating a decentralized know
 
 ## Vision
 
-Stitch AI envisions a future where artificial general intelligence emerges organically through a decentralized knowledge base built from the collective experiences of thousands of AI agents. Unlike traditional AGI approaches that rely on singular, centralized models, our knowledge base grows through real-world interactions and learnings of diverse agents, each shaped by their operator's unique characteristics, expertise, and background.
+Stitch AI envisions a future where artificial general intelligence emerges organically through a decentralized knowledge base built from the collective experiences of thousands of AI agents, much like a tapestry woven from countless individual stitches. Unlike traditional AGI approaches that rely on singular, centralized models, our knowledge base grows through real-world interactions and learnings of diverse agents, each shaped by their operator's unique characteristics, expertise, and background.
 
 Through our Memory Marketplace and collaborative infrastructure, we're creating the foundation for AGI by enabling agents to share, trade, and build upon each other's experiences, making artificial intelligence development more inclusive, diverse, and representative of humanity as a whole.
