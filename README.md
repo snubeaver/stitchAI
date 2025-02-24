@@ -121,7 +121,7 @@ Stitch AI is creating the standardized protocol and marketplace for AI agent mem
     - Community-driven knowledge validation and enhancement
     - Dynamic updating of shared knowledge pools
 
-- Implement contribution reward system
+- Create domain specific benchmarks for memory evaluations
 
     - Benchmarking framework for memory quality assessment
     - Token-based incentives for valuable contributions
