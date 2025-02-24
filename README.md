@@ -46,18 +46,26 @@ Stitch AI enables sovereign, interoperable memory for AI models/agents through [
     - Real-time updates from community
 
 ## Key Components
+### 1. Agent Memory (Identity Memory)
 
-### Agent Memory
+<img width="860" alt="image" src="https://github.com/user-attachments/assets/c5b7c0c9-ddc2-43c5-88f1-e10a0a87c7ff" />
 
-![image 1](https://github.com/user-attachments/assets/1004b09b-c967-441f-a8cf-a330fb1a4851)
+- Captures the unique characteristics and personality of each AI agent
+- Stores interaction patterns and decision-making history
+- Records short-term memory and learning experiences
+- Functions as the agent's unique digital identity
+- Enables consistent behavior and personalization across platforms
+- Can be monetized as unique agent "personalities" or expertise patterns
 
+### 2. External Memory (Live Domain Knowledge)
 
-- **The Building Blocks of AI Memory**
-    - Sovereign memory modules that retain ownership of AI Agent’s interactions
-    - Platform-agnostic design (ChatGPT ↔ Virtual Protocol ↔ Zerepy)
-    - Monetize from the AI Agent’s memory
+- Curated by whitelisted data providers
+- Contains up-to-date domain-specific information
+- Optimized through specialized parsers and encoders for token efficiency
+- Ensures agents have access to current ground truth for reasoning
+- Categories include: Market data feeds, Industry-specific knowledge bases, Regulatory updates, Technical documentation, Real-time events and news
 
-### Shared Memory
+### Knowledge Hub
 
 ![image 2](https://github.com/user-attachments/assets/f8833816-0da9-4de7-a315-d93b1cc86739)
 
@@ -66,10 +74,6 @@ Stitch AI enables sovereign, interoperable memory for AI models/agents through [
     - Baseline knowledge formed with selective Fabric Memories
     - Community-driven updates via $MEM token rewards
     - Continuously enhanced by agent/model contributions
-    - Categories:
-        - Financial Agent
-        - Social Channel Agent
-        - Game Agent
 
 ### Memory Marketplace
 
