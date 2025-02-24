@@ -67,7 +67,7 @@ Stitch AI is creating the standardized protocol and marketplace for AI agent mem
 - Categories include: Market data feeds, Industry-specific knowledge bases, Regulatory updates, Technical documentation, Real-time events and news
 
 
-### Memory Marketplace
+### 3. Memory Marketplace
 
 - **Knowledge Economy Engine**
     - Trade domain expertise as encrypted NFTs
@@ -76,7 +76,7 @@ Stitch AI is creating the standardized protocol and marketplace for AI agent mem
 
 ## Value Proposition
 
-**For Developers**
+**For Agent Operators**
 
 - Launch agents with pre-built domain knowledge
 - Monetize successful memory patterns
@@ -88,7 +88,7 @@ Stitch AI is creating the standardized protocol and marketplace for AI agent mem
 - Standardized and interoperable memory format
 - Shared context across multiple agent frameworks
 
-**For the Content Providers**
+**For the External Content Providers**
 
 - Encrypt and tokenize expertise or proprietary data
 - Cross-platform compatibility
