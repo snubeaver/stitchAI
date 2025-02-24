@@ -27,10 +27,11 @@ Stitch AI is creating the standardized protocol and marketplace for AI agent mem
     - 80% of data locked in unstructured formats
     - Complex documents and data structures resist LLM integration
 
-![image](https://github.com/user-attachments/assets/3f3d0dcf-d5f9-4d41-acd2-900f2ac994b9)
 
 
 ## Core Innovation
+<img width="925" alt="image" src="https://github.com/user-attachments/assets/6b7f4be0-5c09-40cc-863b-25be262f67f4" />
+
 
 - **Ready-to-go Knowledge Hub**:
     - Pre-processed, domain-specific data ready for instant agent use
@@ -41,7 +42,7 @@ Stitch AI is creating the standardized protocol and marketplace for AI agent mem
 - **Cross-Platform Interoperability**:
     - Seamless memory transfer between LangGraph, CrewAI, and others
     - One memory format for all platforms
-- **Living Knowledge Graph**:
+- **Living Knowledge Hub**:
     - Continuous learning from agent interactions
     - Real-time updates from community
 
