@@ -1,7 +1,8 @@
 import { produce } from 'immer';
 import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
+
+import { logger } from './_logger';
 
 interface Props {
   id?: string;
@@ -28,10 +29,8 @@ interface State {
 }
 
 export const useDialogState = create<State>()(
-  // @ts-ignore
-  immer(
-    // @ts-ignore
-    devtools(set => ({
+  logger(
+    immer(set => ({
       name: 'dialog',
 
       opened: [] as string[],

@@ -24,7 +24,7 @@ export const overlay = style({
   position: 'fixed',
   inset: 0,
   animation: `${overlayKeyframes} 150ms cubic-bezier(0.4, 0, 0.2, 1)`,
-  backdropFilter: 'blur(4px)',
+  // backdropFilter: 'blur(4px)',
 
   zIndex: 10,
 });
@@ -63,6 +63,8 @@ export const title = style([
 
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'space-between',
+
     gap: 16,
   },
 ]);
