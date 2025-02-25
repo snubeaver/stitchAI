@@ -38,4 +38,24 @@ export const utilities = {
   },
 };
 
-export const font = {};
+export const font = {
+  outfit: {
+    r16: {
+      fontFamily: 'Outfit',
+      fontSize: '16px',
+      fontStyle: 'normal',
+      fontWeight: '400',
+      lineHeight: '24px',
+      letterSpacing: '-0.48px',
+    },
+
+    thin60: {
+      fontFamily: 'Outfit',
+      fontSize: '60px',
+      fontStyle: 'normal',
+      fontWeight: '200',
+      lineHeight: '64px',
+      letterSpacing: '-2.4px',
+    },
+  },
+};
