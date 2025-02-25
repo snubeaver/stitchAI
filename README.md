@@ -6,7 +6,7 @@
 
 ## Overview
 
-Stitch AI enables sovereign, interoperable memory for AI models/agents through [RAG](https://www.notion.so/RAG-c206dc99435d494bae5eb0fa3f29158c?pvs=21) and blockchain. We provide **the critical post-training knowledge layer** - live data, domain expertise, and human interactions **that LLMs never learned during pre-training**.
+Stitch AI is creating the standardized protocol and marketplace for AI agent memories. By establishing a common format for storing and sharing agent experiences, domain knowledge, and interaction patterns, we enable seamless knowledge transfer between different AI platforms and frameworks. Our infrastructure provides the critical **post-training knowledge layer** that allows agents to preserve their learned experiences, share expertise, and access current domain knowledge - extending far beyond the limitations of static pre-training data.
 
 ## Why Memory Matters
 
@@ -27,10 +27,11 @@ Stitch AI enables sovereign, interoperable memory for AI models/agents through [
     - 80% of data locked in unstructured formats
     - Complex documents and data structures resist LLM integration
 
-![image](https://github.com/user-attachments/assets/3f3d0dcf-d5f9-4d41-acd2-900f2ac994b9)
 
 
 ## Core Innovation
+<img width="925" alt="image" src="https://github.com/user-attachments/assets/6b7f4be0-5c09-40cc-863b-25be262f67f4" />
+
 
 - **Ready-to-go Knowledge Hub**:
     - Pre-processed, domain-specific data ready for instant agent use
@@ -41,53 +42,41 @@ Stitch AI enables sovereign, interoperable memory for AI models/agents through [
 - **Cross-Platform Interoperability**:
     - Seamless memory transfer between LangGraph, CrewAI, and others
     - One memory format for all platforms
-- **Living Knowledge Graph**:
+- **Living Knowledge Hub**:
     - Continuous learning from agent interactions
     - Real-time updates from community
 
 ## Key Components
+### 1. Agent Memory (Identity Memory)
 
-### Agent Memory
+<img width="860" alt="image" src="https://github.com/user-attachments/assets/c5b7c0c9-ddc2-43c5-88f1-e10a0a87c7ff" />
 
-![image 1](https://github.com/user-attachments/assets/1004b09b-c967-441f-a8cf-a330fb1a4851)
+- Captures the unique characteristics and personality of each AI agent
+- Stores interaction patterns and decision-making history
+- Records short-term memory and learning experiences
+- Functions as the agent's unique digital identity
+- Enables consistent behavior and personalization across platforms
+- Can be monetized as unique agent "personalities" or expertise patterns
+
+### 2. External Memory (Live Domain Knowledge)
+
+- Curated by whitelisted data providers
+- Contains up-to-date domain-specific information
+- Optimized through specialized parsers and encoders for token efficiency
+- Ensures agents have access to current ground truth for reasoning
+- Categories include: Market data feeds, Industry-specific knowledge bases, Regulatory updates, Technical documentation, Real-time events and news
 
 
-- **The Building Blocks of AI Memory**
-    - Sovereign memory modules that retain ownership of AI Agent’s interactions
-    - Platform-agnostic design (ChatGPT ↔ Virtual Protocol ↔ Zerepy)
-    - Monetize from the AI Agent’s memory
-
-### Shared Memory
-
-![image 2](https://github.com/user-attachments/assets/f8833816-0da9-4de7-a315-d93b1cc86739)
-
-
-- **Collective and Evolving Intelligence Pool for Domain Memory Boilerplate**
-    - Baseline knowledge formed with selective Fabric Memories
-    - Community-driven updates via $MEM token rewards
-    - Continuously enhanced by agent/model contributions
-    - Categories:
-        - Financial Agent
-        - Social Channel Agent
-        - Game Agent
-
-### Memory Marketplace
+### 3. Memory Marketplace
 
 - **Knowledge Economy Engine**
     - Trade domain expertise as encrypted NFTs
     - Monetize agent training patterns
     - Safely exchange proprietary data (raw content never exposed)
 
-### Node Network
-
-- **Decentralized Backbone**
-    - Incentivized storage of high-demand memories
-    - On-chain validation of RAG relevance through multiple benchmarks
-    - Ensures data availability and system scalability
-
 ## Value Proposition
 
-**For Developers**
+**For Agent Operators**
 
 - Launch agents with pre-built domain knowledge
 - Monetize successful memory patterns
@@ -99,14 +88,54 @@ Stitch AI enables sovereign, interoperable memory for AI models/agents through [
 - Standardized and interoperable memory format
 - Shared context across multiple agent frameworks
 
-**For the Content Providers**
+**For the External Content Providers**
 
 - Encrypt and tokenize expertise or proprietary data
 - Cross-platform compatibility
 - Multiple revenue streams by accessing global AI market
 
+
+## Roadmap
+<img width="907" alt="image" src="https://github.com/user-attachments/assets/e1eec5aa-0d15-441f-9195-ec0825d59098" />
+
+### Phase 1: Memory Sovereignty & Economics
+
+- Launch core memory marketplace infrastructure
+
+    - Agent Memory: Enable storing and trading of agent personalities, interaction patterns, and learning experiences
+    - External Memory: Partner with domain experts to provide curated, up-to-date knowledge bases
+
+- Deploy cross-platform compatibility layer
+
+    - Standardized memory format for seamless agent interoperability
+    - Integration with major AI agent platforms
+    - API and SDK for easy developer adoption
+
+- Establish memory standard for ownership and monetization
+
+## Phase 2: Collective Knowledge Evolution
+
+- Launch Knowledge Hub for collaborative learning
+![image 2](https://github.com/user-attachments/assets/f8833816-0da9-4de7-a315-d93b1cc86739)
+    - Aggregation of successful agent experiences and insights
+    - Community-driven knowledge validation and enhancement
+    - Dynamic updating of shared knowledge pools
+
+- Create domain specific benchmarks for memory evaluations
+
+    - Benchmarking framework for memory quality assessment
+    - Token-based incentives for valuable contributions
+    - Reputation system for memory providers
+
+- Develop automated evaluation mechanisms
+
+    - Performance tracking across different domain
+    - Quality metrics for memory contributions
+
+This roadmap lays the foundation for our vision of creating a decentralized knowledge ecosystem where artificial general intelligence emerges through collective agent experiences and learning.
+
 ## Vision
 
-Stitch AI envisions a future where artificial general intelligence emerges organically through a decentralized knowledge base built from the collective experiences of thousands of AI agents. Unlike traditional AGI approaches that rely on singular, centralized models, our knowledge base grows through real-world interactions and learnings of diverse agents, each shaped by their operator's unique characteristics, expertise, and background.
+Stitch AI envisions a future where artificial general intelligence emerges organically through a decentralized knowledge base built from the collective experiences of thousands of AI agents, much like a tapestry woven from countless individual stitches. Unlike traditional AGI approaches that rely on singular, centralized models, our knowledge base grows through real-world interactions and learnings of diverse agents, each shaped by their operator's unique characteristics, expertise, and background.
 
 Through our Memory Marketplace and collaborative infrastructure, we're creating the foundation for AGI by enabling agents to share, trade, and build upon each other's experiences, making artificial intelligence development more inclusive, diverse, and representative of humanity as a whole.
