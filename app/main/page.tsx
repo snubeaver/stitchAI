@@ -5,8 +5,8 @@ import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { useAccount } from 'wagmi';
 
-import { ButtonPrimary } from '@/component/button/primary';
-import { Gnb } from '@/component/gnb';
+import { ButtonPrimary } from '@/components/button/primary';
+import { Gnb } from '@/components/gnb';
 
 import * as style from './style.css';
 

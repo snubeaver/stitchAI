@@ -18,7 +18,7 @@ export const ButtonPrimary = ({
   iconLeading,
   iconTrailing,
   size = 'large',
-  full,
+  full = false,
   onClick,
   ...rest
 }: Props) => {

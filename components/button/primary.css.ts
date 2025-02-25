@@ -16,6 +16,11 @@ export const wrapper = recipe({
 
       color: color.white[100],
       cursor: 'pointer',
+
+      ':disabled': {
+        background: color.black[20],
+        cursor: 'not-allowed',
+      },
     },
   ],
   variants: {
