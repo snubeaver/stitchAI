@@ -1,14 +1,12 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useCallback, useMemo } from 'react';
 import { mainnet, sepolia } from 'viem/chains';
-import { useAccount, usePublicClient, useSwitchChain } from 'wagmi';
+import { usePublicClient, useSwitchChain } from 'wagmi';
 
 import { IS_MAINNET } from '@/constants';
 
 export const useSwitchNetwork = () => {
-  const { isConnected } = useAccount();
-
   const client = usePublicClient();
 
   const currentChainId = client?.chain?.id;
@@ -16,10 +14,17 @@ export const useSwitchNetwork = () => {
 
   const { switchChain } = useSwitchChain();
 
-  useEffect(() => {
-    if (!currentChainId || !targetChainId || !isConnected) return;
+  const needToSwitch = useMemo(() => {
+    if (!currentChainId || !targetChainId) return false;
+    if (currentChainId === targetChainId) return false;
+    return true;
+  }, [currentChainId, targetChainId]);
 
-    if (currentChainId === targetChainId) return;
+  const switchNetwork = useCallback(() => {
+    if (!needToSwitch) return;
+
     switchChain({ chainId: targetChainId });
-  }, [currentChainId, isConnected, switchChain, targetChainId]);
+  }, [needToSwitch, switchChain, targetChainId]);
+
+  return { switchNetwork, needToSwitch };
 };

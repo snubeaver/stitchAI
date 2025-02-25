@@ -5,8 +5,8 @@ import { useRouter } from 'next/navigation';
 import { color } from '@/assets/color';
 import ArrowNext from '@/assets/icon/icon-arrow-next.svg';
 import Symbol from '@/assets/icon/symbol.svg';
-import { ButtonPrimary } from '@/component/button/primary';
-import { Gnb } from '@/component/gnb';
+import { ButtonPrimary } from '@/components/button/primary';
+import { Gnb } from '@/components/gnb';
 
 import * as style from './style.css';
 

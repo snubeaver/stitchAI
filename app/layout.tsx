@@ -4,6 +4,7 @@ import { Metadata, Viewport } from 'next';
 import { Outfit } from 'next/font/google';
 import { headers } from 'next/headers';
 
+import DialogProvider from '@/providers/dialog';
 import Web3Provider from '@/providers/web3';
 
 export const metadata: Metadata = {
@@ -26,7 +27,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en" className={outfit.className}>
       <body>
-        <Web3Provider cookie={cookie}>{children}</Web3Provider>
+        <Web3Provider cookie={cookie}>
+          <DialogProvider>{children}</DialogProvider>
+        </Web3Provider>
       </body>
     </html>
   );

@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { useAccount } from 'wagmi';
 
-import { Gnb } from '@/component/gnb';
+import { Gnb } from '@/components/gnb';
 
 import * as style from './style.css';
 

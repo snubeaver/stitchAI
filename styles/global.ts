@@ -40,6 +40,15 @@ export const utilities = {
 
 export const font = {
   outfit: {
+    l14: {
+      fontFamily: 'Outfit',
+      fontSize: '14px',
+      fontStyle: 'normal',
+      fontWeight: '300',
+      lineHeight: '20px',
+      letterSpacing: '-0.42px',
+    },
+
     r16: {
       fontFamily: 'Outfit',
       fontSize: '16px',
@@ -47,6 +56,31 @@ export const font = {
       fontWeight: '400',
       lineHeight: '24px',
       letterSpacing: '-0.48px',
+    },
+    r20: {
+      fontFamily: 'Outfit',
+      fontSize: '20px',
+      fontStyle: 'normal',
+      fontWeight: '400',
+      lineHeight: '24px',
+      letterSpacing: '-0.6px',
+    },
+
+    m28: {
+      fontFamily: 'Outfit',
+      fontSize: '28px',
+      fontStyle: 'normal',
+      fontWeight: '500',
+      lineHeight: '36px',
+      letterSpacing: '-0.84px',
+    },
+    m40: {
+      fontFamily: 'Outfit',
+      fontSize: '40px',
+      fontStyle: 'normal',
+      fontWeight: '500',
+      lineHeight: '48px',
+      letterSpacing: '-1.2px',
     },
 
     thin60: {
