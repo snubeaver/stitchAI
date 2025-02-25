@@ -29,7 +29,7 @@ export const wrapper = recipe({
         padding: '8px 12px',
       },
       large: {
-        padding: '16px 20px 16px 24px',
+        padding: '16px 24px 16px 20px',
       },
     },
     full: {

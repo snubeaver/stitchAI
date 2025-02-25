@@ -40,6 +40,14 @@ export const utilities = {
 
 export const font = {
   outfit: {
+    l12: {
+      fontFamily: 'Outfit',
+      fontSize: '12px',
+      fontStyle: 'normal',
+      fontWeight: '300',
+      lineHeight: '16px',
+      letterSpacing: '-0.36px',
+    },
     l14: {
       fontFamily: 'Outfit',
       fontSize: '14px',
@@ -49,6 +57,14 @@ export const font = {
       letterSpacing: '-0.42px',
     },
 
+    r14: {
+      fontFamily: 'Outfit',
+      fontSize: '14px',
+      fontStyle: 'normal',
+      fontWeight: '400',
+      lineHeight: '22px',
+      letterSpacing: '-0.42px',
+    },
     r16: {
       fontFamily: 'Outfit',
       fontSize: '16px',
