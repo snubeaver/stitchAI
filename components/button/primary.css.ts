@@ -19,6 +19,48 @@ export const wrapper = recipe({
 
       ':disabled': {
         background: color.black[20],
+        color: color.black[30],
+        cursor: 'not-allowed',
+      },
+    },
+  ],
+  variants: {
+    size: {
+      medium: {
+        padding: '8px 12px',
+      },
+      large: {
+        padding: '16px 24px 16px 20px',
+      },
+    },
+    full: {
+      true: {
+        width: '100%',
+      },
+      false: {
+        width: 'fit-content',
+      },
+    },
+  },
+});
+
+export const normal = recipe({
+  base: [
+    utilities.flexCenter,
+    font.outfit.r16,
+    {
+      flexShrink: 0,
+      gap: '12px',
+
+      borderRadius: 8,
+      background: color.black[5],
+
+      color: color.black[100],
+      cursor: 'pointer',
+
+      ':disabled': {
+        background: color.black[20],
+        color: color.black[30],
         cursor: 'not-allowed',
       },
     },

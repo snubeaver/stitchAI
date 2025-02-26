@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { color } from '@/assets/color';
-import { font, utilities } from '@/styles/global';
+import { font } from '@/styles/global';
 
 export const header = style({
   display: 'flex',
@@ -11,24 +11,24 @@ export const header = style({
   gap: 8,
 });
 
-export const headerWithIcon = style({
-  display: 'flex',
-  alignItems: 'center',
-  gap: 16,
-});
-
-export const sectionMemories = style({
+export const section = style({
   display: 'flex',
   flexDirection: 'column',
   gap: 16,
 });
 
-export const label = style([
+export const sectionLabel = style([
   font.outfit.r20,
   {
     color: color.black[50],
   },
 ]);
+
+export const memories = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 8,
+});
 
 export const memory = recipe({
   base: [
@@ -61,4 +61,23 @@ export const memory = recipe({
   },
 });
 
-export const footer = style([utilities.flexCenter, {}]);
+export const memoryCreateButton = style([
+  font.outfit.r14,
+  {
+    height: 30,
+
+    display: 'flex',
+    alignItems: 'center',
+    gap: 4,
+
+    color: color.blue[100],
+
+    cursor: 'pointer',
+  },
+]);
+
+export const footer = style({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+});

@@ -9,13 +9,13 @@ import * as style from './style.css';
 
 interface Props {
   id: string;
-  children: ReactNode;
+  content: ReactNode;
 
   width?: string;
   height?: string;
 }
 
-export const Dialog = ({ id, children, width = '630px', height = 'fit-content' }: Props) => {
+export const Dialog = ({ id, content, width = '630px', height = 'fit-content' }: Props) => {
   const { opened } = useDialog(id);
 
   if (!opened) return;
@@ -24,7 +24,7 @@ export const Dialog = ({ id, children, width = '630px', height = 'fit-content' }
       className={style.content}
       style={assignInlineVars({ [style.widthVar]: width, [style.heightVar]: height })}
     >
-      {children}
+      {content}
     </div>
   );
 };

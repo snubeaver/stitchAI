@@ -9,6 +9,8 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   iconLeading?: ReactNode;
   iconTrailing?: ReactNode;
 
+  state?: 'normal' | 'primary';
+
   size?: 'medium' | 'large';
   full?: boolean;
 }
@@ -19,9 +21,20 @@ export const ButtonPrimary = ({
   iconTrailing,
   size = 'large',
   full = false,
+  state = 'primary',
   onClick,
   ...rest
 }: Props) => {
+  if (state === 'normal') {
+    return (
+      <button className={style.normal({ full, size })} onClick={onClick} {...rest}>
+        {iconLeading && <>{iconLeading}</>}
+        {text}
+        {iconTrailing && <>{iconTrailing}</>}
+      </button>
+    );
+  }
+
   return (
     <button className={style.wrapper({ full, size })} onClick={onClick} {...rest}>
       {iconLeading && <>{iconLeading}</>}
