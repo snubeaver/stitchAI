@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { color } from '@/assets/color';
-import { font, utilities } from '@/styles/global';
+import { font } from '@/styles/global';
 
 export const header = style({
   display: 'flex',
@@ -11,35 +11,34 @@ export const header = style({
   gap: 8,
 });
 
-export const headerWithIcon = style({
-  display: 'flex',
-  alignItems: 'center',
-  gap: 16,
-});
-
-export const sectionMemories = style({
+export const section = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: 16,
+  gap: 8,
 });
 
-export const label = style([
+export const sectionLabel = style([
   font.outfit.r20,
   {
     color: color.black[50],
   },
 ]);
 
-export const memory = recipe({
+export const platforms = style({
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap: 8,
+});
+
+export const platform = recipe({
   base: [
-    font.outfit.l14,
+    font.outfit.r16,
     {
-      width: '100%',
-      height: 52,
+      width: 'fit-content',
 
       display: 'flex',
+      justifyContent: 'center',
       alignItems: 'center',
-      justifyContent: 'space-between',
 
       borderRadius: 8,
 
@@ -50,15 +49,19 @@ export const memory = recipe({
   variants: {
     selected: {
       true: {
-        padding: '0px 22px',
+        padding: '14px 22px',
         border: `2px solid ${color.purple[100]}`,
       },
       false: {
-        padding: '0px 23px',
+        padding: '15px 23px',
         border: `1px solid ${color.black[30]}`,
       },
     },
   },
 });
 
-export const footer = style([utilities.flexCenter, {}]);
+export const footer = style({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+});
