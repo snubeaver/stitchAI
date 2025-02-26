@@ -18,7 +18,7 @@ export const wrapper = recipe({
       cursor: 'pointer',
 
       ':disabled': {
-        background: color.black[20],
+        background: color.black[10],
         color: color.black[30],
         cursor: 'not-allowed',
       },
@@ -59,7 +59,7 @@ export const normal = recipe({
       cursor: 'pointer',
 
       ':disabled': {
-        background: color.black[20],
+        background: color.black[10],
         color: color.black[30],
         cursor: 'not-allowed',
       },
