@@ -14,7 +14,7 @@ import { useDialog } from '@/hooks/use-dialog';
 
 import { AgentCard } from './_components/agent-card';
 import { MemoryCard } from './_components/memory-card';
-import { mockMyAgents } from './_mock';
+// import { mockMyAgents } from './_mock';
 import * as style from './style.css';
 
 export default function Page() {
@@ -47,8 +47,8 @@ export default function Page() {
               />
             </div>
             <div className={style.cards}>
-              {mockMyAgents.map(agent => (
-                <AgentCard key={agent.id} agentId={agent.id} {...agent} />
+              {user?.agent.map(agent => (
+                <AgentCard key={agent.id} agentId={agent.id} {...agent} memoryHash={agent.memory} />
               ))}
             </div>
           </div>

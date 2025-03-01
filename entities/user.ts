@@ -14,6 +14,7 @@ export type Agent = {
   socialLink: string;
   memory: string;
   status: DeploymentStatus;
+  platform: string;
 };
 
 export type Memory = {

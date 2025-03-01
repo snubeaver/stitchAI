@@ -19,7 +19,7 @@ const DialogProvider = ({ children }: { children: React.ReactNode }) => {
       {openedAny && <div className={overlay} onClick={reset} />}
 
       <Dialog id="memory-market-card" content={<MemoryMarketCardDetail />} />
-      <Dialog id="agent-card-detail" content={<AgentCardDetail />} />
+      <Dialog id="agent-card-detail" content={<AgentCardDetail params={{ agnetIdx: 0 }} />} />
       <Dialog id="create-agent" content={<CreateAgent />} />
       <Dialog id="memory-card" content={<MemoryCardDetail />} />
       <Dialog id="import-memory" content={<ImportMemory />} />
