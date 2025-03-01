@@ -11,11 +11,23 @@ import * as style from './style.css';
 
 interface Props {
   handleNext: () => void;
+  agent: {
+    id: string;
+    name: string;
+    memoryHash: string;
+    platform: string;
+    socialLink: string;
+    description: string;
+    memory: {
+      id: string;
+      name: string;
+    };
+  };
 }
-export const AgentCardDetailMain = ({ handleNext }: Props) => {
+export const AgentCardDetailMain = ({ handleNext, agent }: Props) => {
   const { close } = useDialog('agent-card-detail');
 
-  const agent = mockMyAgentDetail.find(i => i.id === '1');
+  // const agent = mockMyAgentDetail.find(i => i.id === '1');
 
   const handleDeleteMemory = () => {};
   const handleSelectMemory = () => handleNext();
