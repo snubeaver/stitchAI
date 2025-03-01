@@ -2,6 +2,8 @@ import { useDropzone } from 'react-dropzone';
 import { useForm } from 'react-hook-form';
 import { useAccount } from 'wagmi';
 
+import { useGetRunningInstanceMemory } from '@/api/get-running-instance-memory';
+import { useGetRunningInstances } from '@/api/get-running-instances';
 import { usePostImportMemory } from '@/api/post-import-memory';
 import { color } from '@/assets/color';
 import IconClose from '@/assets/icon/icon-close.svg';
@@ -21,6 +23,9 @@ interface FormState {
 }
 export const ImportMemory = () => {
   const { address } = useAccount();
+
+  const { data: runningInstances } = useGetRunningInstances();
+  const { mutateAsync: downloadRunningInstanceMemory } = useGetRunningInstanceMemory();
 
   const { close } = useDialog('import-memory');
   const { register, setValue, getValues, watch } = useForm<FormState>();
@@ -61,11 +66,29 @@ export const ImportMemory = () => {
     close();
   };
 
+  const handleDownloadRunningInstanceMemory = async (instanceName: string) => {
+    const res = await downloadRunningInstanceMemory(instanceName);
+
+    const targetData = res.csv;
+    const blob = new Blob([targetData], { type: 'text/plain' });
+
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `${res.filename}.data`;
+
+    document.body.appendChild(link);
+    link.click();
+
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
+  };
+
   return (
     <>
       <div className={style.header}>
         <div className={baseStyle.title}>
-          Create Agent
+          Import Memory
           <div className={baseStyle.closeButton} onClick={close}>
             <IconClose width={24} height={24} fill={color.black[30]} />
           </div>
@@ -140,6 +163,21 @@ export const ImportMemory = () => {
               />
             </div>
           )}
+        </div>
+
+        <div className={style.section}>
+          <div className={style.sectionLabel2}>or Download running agent memory(optional)</div>
+          <div className={style.memoryList}>
+            {runningInstances?.deployments.map(instance => (
+              <div
+                key={instance.jobId}
+                className={style.memoryItem}
+                onClick={() => handleDownloadRunningInstanceMemory(instance.jobId)}
+              >
+                {instance.instanceName}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

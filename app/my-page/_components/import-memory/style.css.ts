@@ -23,6 +23,12 @@ export const sectionLabel = style([
     color: color.black[50],
   },
 ]);
+export const sectionLabel2 = style([
+  font.outfit.r16,
+  {
+    color: color.black[50],
+  },
+]);
 
 export const platforms = style({
   display: 'flex',
@@ -182,5 +188,30 @@ export const textarea = style([
       padding: '12px 24px',
       border: `1px solid ${color.black[30]}`,
     },
+  },
+]);
+
+export const memoryList = style({
+  overflow: 'auto',
+
+  display: 'flex',
+  flexWrap: 'wrap',
+  columnGap: 12,
+  rowGap: 4,
+});
+
+export const memoryItem = style([
+  font.outfit.l12,
+  {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 4,
+
+    padding: '2px 6px',
+
+    borderRadius: 8,
+    border: `1px solid ${color.black[30]}`,
+
+    cursor: 'pointer',
   },
 ]);
