@@ -1,16 +1,18 @@
 import { useState } from 'react';
 
-import { mockMyAgentDetail } from '../../_mock';
+// import { mockMyAgentDetail } from '../../_mock';
 import { AgentCardDetailMain } from './_components/main';
 import { AgentCardDetailSelectMemory } from './_components/select-memory';
 import { useGetUser } from '@/api/get-user';
+import { useDialog } from '@/hooks/use-dialog';
 
-export const AgentCardDetail = ({ params }: { params: { agnetIdx: number } }) => {
+export const AgentCardDetail = () => {
   const [step, setStep] = useState<'main' | 'select-memory'>('main');
+  const { params } = useDialog('agent-card-detail');
 
   const { data: user } = useGetUser();
 
-  const agent = user?.agent[params.agnetIdx];
+  const agent = user?.agent.find(i => i.id === params.agentId);
 
   if (!agent) return;
 
