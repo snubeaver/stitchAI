@@ -69,13 +69,13 @@ export const ImportMemory = () => {
   const handleDownloadRunningInstanceMemory = async (instanceName: string) => {
     const res = await downloadRunningInstanceMemory(instanceName);
 
-    const targetData = res.csv;
+    const targetData = res.toString();
     const blob = new Blob([targetData], { type: 'text/plain' });
 
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `${res.filename}.data`;
+    link.download = `${instanceName}-memories-${new Date().toISOString()}.csv`;
 
     document.body.appendChild(link);
     link.click();
@@ -169,13 +169,15 @@ export const ImportMemory = () => {
           <div className={style.sectionLabel2}>or Download running agent memory(optional)</div>
           <div className={style.memoryList}>
             {runningInstances?.deployments.map(instance => (
-              <div
-                key={instance.jobId}
-                className={style.memoryItem}
-                onClick={() => handleDownloadRunningInstanceMemory(instance.jobId)}
-              >
-                {instance.instanceName}
-              </div>
+              instance.instanceName.startsWith('eliza-') ? (
+                <div
+                  key={instance.jobId}
+                  className={style.memoryItem}
+                  onClick={() => handleDownloadRunningInstanceMemory(instance.instanceName)}
+                >
+                  {instance.instanceName}
+                </div>
+              ) : null
             ))}
           </div>
         </div>
