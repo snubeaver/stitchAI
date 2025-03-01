@@ -13,7 +13,6 @@ import { useDialog } from '@/hooks/use-dialog';
 
 import { CreateAgentFormState } from '../../_interfaces';
 import * as style from './style.css';
-import { MemoryPlatform } from '@/entities/market-memory';
 import { usePostCreateElizaAgent } from '@/api/post-create-eliza-agent';
 
 interface Props {
@@ -29,6 +28,7 @@ export const CreateAgentAgentInfo = ({ handleBack }: Props) => {
   const name = watch('name');
   const description = watch('description');
   const socialLink = watch('socialLink');
+  const platform = watch('platform');
 
   const selectedMemory = watch('memory');
   const selectedMemoryDetail = user?.memory.find(i => i.id === selectedMemory);
@@ -37,12 +37,14 @@ export const CreateAgentAgentInfo = ({ handleBack }: Props) => {
   const { mutateAsync: createAgent } = usePostCreateAgent();
   const { mutateAsync: createElizaAgent } = usePostCreateElizaAgent();
 
-  const valid = !!name && !!description && !!socialLink;
+  const valid = !!name && !!description && !!socialLink && !!platform;
 
   const handleCreate = async () => {
     const values = getValues();
 
-    if (values.platform === MemoryPlatform.CREW_AI) {
+    console.log(values);
+
+    if (values.platform === 'CREW_AI') {
       await createAgent({
         data: memory,
         memoryId: values.memory,
@@ -51,7 +53,7 @@ export const CreateAgentAgentInfo = ({ handleBack }: Props) => {
         description: values.description,
         socialLink: values.socialLink,
       });
-    } else if (values.platform === MemoryPlatform.ELIZA_OS) {
+    } else if (values.platform === 'ELIZA_OS') {
       await createElizaAgent({
         telegram: values.telegramBotToken || '',
         agentName: values.name,
