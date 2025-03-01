@@ -4,35 +4,46 @@ import { HTMLAttributes } from 'react';
 
 import { color } from '@/assets/color';
 import { Badge } from '@/components/badge';
+import { Memory } from '@/entities/user';
+import { useDialog } from '@/hooks/use-dialog';
 import { formatNumeric } from '@/libs/numeric';
 
 import * as style from './style.css';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  category: string;
-  name: string;
-
-  price: number;
-  priceLabel: string;
+  memory: Memory;
 }
 
-export const MemoryCard = ({ name, category, price, priceLabel = '/month', ...props }: Props) => {
+export const MemoryCard = ({ memory, ...props }: Props) => {
+  const { open: openDialogMemoryCardDetail } = useDialog('memory-card');
+
   const badgeBackgroundColor =
-    category === 'Agent Memory'
+    memory.type === 'AGENT'
       ? color.blue[100]
-      : category === 'External Memory'
+      : memory.type === 'EXTERNAL'
         ? color.purple[100]
         : color.black[100];
 
   return (
-    <div className={style.wrapper} {...props}>
+    <div
+      className={style.wrapper}
+      onClick={() =>
+        openDialogMemoryCardDetail({
+          params: {
+            memoryId: memory.id,
+            type: memory.type,
+          },
+        })
+      }
+      {...props}
+    >
       <div className={style.header}>
-        <Badge text={category} backgroundColor={badgeBackgroundColor} />
-        <div className={style.title}>{name}</div>
+        <Badge text={memory.type} backgroundColor={badgeBackgroundColor} />
+        <div className={style.title}>{memory.title}</div>
       </div>
       <div className={style.priceWrapper}>
-        <div className={style.price}>{formatNumeric(price, { prefix: '$' })}</div>
-        <div className={style.priceLabel}>{priceLabel}</div>
+        <div className={style.price}>{formatNumeric(memory.price, { prefix: '$' })}</div>
+        <div className={style.priceLabel}>/month</div>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { useAccount } from 'wagmi';
 
+import { useGetUser } from '@/api/get-user';
 import { color } from '@/assets/color';
 import IconDownload from '@/assets/icon/icon-download.svg';
 import IconPlus from '@/assets/icon/icon-plus.svg';
@@ -13,12 +14,14 @@ import { useDialog } from '@/hooks/use-dialog';
 
 import { AgentCard } from './_components/agent-card';
 import { MemoryCard } from './_components/memory-card';
-import { mockMyAgents, mockMyMemories } from './_mock';
+import { mockMyAgents } from './_mock';
 import * as style from './style.css';
 
 export default function Page() {
   const router = useRouter();
   const { isConnected } = useAccount();
+
+  const { data: user } = useGetUser();
 
   const { open: openDialogCreateAgent } = useDialog('create-agent');
   const { open: openDialogImportMemory } = useDialog('import-memory');
@@ -59,9 +62,7 @@ export default function Page() {
               />
             </div>
             <div className={style.cards}>
-              {mockMyMemories.map(memory => (
-                <MemoryCard key={memory.id} {...memory} />
-              ))}
+              {user?.memory.map(memory => <MemoryCard key={memory.id} memory={memory} />)}
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import { mainnet, sepolia } from '@reown/appkit/networks';
+import { hederaTestnet } from '@reown/appkit/networks';
 import { createAppKit } from '@reown/appkit/react';
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi';
 import { Config, cookieStorage, cookieToInitialState, createStorage, WagmiProvider } from 'wagmi';
@@ -23,14 +23,14 @@ const wagmiAdapter = new WagmiAdapter({
   storage: createStorage({ storage: cookieStorage }),
   ssr: true,
   projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || '',
-  networks: [mainnet, sepolia],
+  networks: [hederaTestnet],
 });
 
 createAppKit({
   adapters: [wagmiAdapter],
   projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || '',
-  networks: [mainnet, sepolia],
-  defaultNetwork: sepolia,
+  networks: [hederaTestnet],
+  defaultNetwork: hederaTestnet,
   themeMode: 'dark',
   metadata: metadata,
   features: {

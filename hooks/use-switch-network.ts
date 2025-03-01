@@ -1,16 +1,14 @@
 'use client';
 
 import { useCallback, useMemo } from 'react';
-import { mainnet, sepolia } from 'viem/chains';
+import { hederaTestnet } from 'viem/chains';
 import { usePublicClient, useSwitchChain } from 'wagmi';
-
-import { IS_MAINNET } from '@/constants';
 
 export const useSwitchNetwork = () => {
   const client = usePublicClient();
 
   const currentChainId = client?.chain?.id;
-  const targetChainId = IS_MAINNET ? mainnet.id : sepolia.id;
+  const targetChainId = hederaTestnet.id;
 
   const { switchChain } = useSwitchChain();
 

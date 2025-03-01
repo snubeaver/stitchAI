@@ -4,6 +4,7 @@ import { MemoryMarketCardDetail } from '@/app/memory-market/_components/card-det
 import { AgentCardDetail } from '@/app/my-page/_components/agent-card-detail';
 import { CreateAgent } from '@/app/my-page/_components/create-agent';
 import { ImportMemory } from '@/app/my-page/_components/import-memory';
+import { MemoryCardDetail } from '@/app/my-page/_components/memory-card-detail';
 import { Dialog } from '@/components/dialog';
 import { overlay } from '@/components/dialog/style.css';
 import { useDialog } from '@/hooks/use-dialog';
@@ -20,6 +21,7 @@ const DialogProvider = ({ children }: { children: React.ReactNode }) => {
       <Dialog id="memory-market-card" content={<MemoryMarketCardDetail />} />
       <Dialog id="agent-card-detail" content={<AgentCardDetail />} />
       <Dialog id="create-agent" content={<CreateAgent />} />
+      <Dialog id="memory-card" content={<MemoryCardDetail />} />
       <Dialog id="import-memory" content={<ImportMemory />} />
     </>
   );

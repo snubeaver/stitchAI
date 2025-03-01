@@ -5,7 +5,6 @@ import { useGetMarketExternalMemory } from '@/api/get-market-external-memories';
 import { color } from '@/assets/color';
 import IconClose from '@/assets/icon/icon-close.svg';
 import IconDownFill from '@/assets/icon/icon-down-fill.svg';
-import { ButtonPrimary } from '@/components/button/primary';
 import * as baseStyle from '@/components/dialog/style.css';
 import { useDialog } from '@/hooks/use-dialog';
 import { truncateAddress } from '@/libs/address';
@@ -13,8 +12,8 @@ import { formatNumeric } from '@/libs/numeric';
 
 import * as style from './style.css';
 
-export const MemoryMarketCardDetail = () => {
-  const { params, close } = useDialog('memory-market-card');
+export const MemoryCardDetail = () => {
+  const { params, close } = useDialog('memory-card');
   const { memoryId, type } = params || {};
 
   const { data: agentMemory } = useGetMarketAgentMemory();
@@ -53,8 +52,6 @@ export const MemoryMarketCardDetail = () => {
           <div className={style.price}>{formatNumeric(memoryDetail.price, { prefix: '$' })}</div>
           <div className={style.priceLabel}>/month</div>
         </div>
-
-        <ButtonPrimary text="Buy Now" />
       </div>
 
       {memoryDetail.description && (

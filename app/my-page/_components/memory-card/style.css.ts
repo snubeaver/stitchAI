@@ -13,6 +13,8 @@ export const wrapper = style({
 
   backgroundColor: color.white[100],
   borderRadius: 8,
+
+  cursor: 'pointer',
 });
 
 export const header = style({
