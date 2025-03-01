@@ -67,7 +67,7 @@ export const ImportMemory = () => {
       platform: memoryType === 'AGENT' ? platform as MemoryPlatform : undefined,
       title,
       description,
-      price: 0,
+      price: 1,
     });
     close();
   };
