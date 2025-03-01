@@ -1,5 +1,8 @@
 import { useFormContext } from 'react-hook-form';
 
+import { useGetMemoryFromStorage } from '@/api/get-memory-from-storage';
+import { useGetUser } from '@/api/get-user';
+import { usePostCreateAgent } from '@/api/post-create-agent';
 import { color } from '@/assets/color';
 import IconArrowBack from '@/assets/icon/icon-arrow-back.svg';
 import IconClose from '@/assets/icon/icon-close.svg';
@@ -15,6 +18,8 @@ interface Props {
   handleBack: () => void;
 }
 export const CreateAgentAgentInfo = ({ handleBack }: Props) => {
+  const { data: user } = useGetUser();
+
   const { close } = useDialog('create-agent');
 
   const { register, getValues, watch } = useFormContext<CreateAgentFormState>();
@@ -23,11 +28,24 @@ export const CreateAgentAgentInfo = ({ handleBack }: Props) => {
   const description = watch('description');
   const socialLink = watch('socialLink');
 
+  const selectedMemory = watch('memory');
+  const selectedMemoryDetail = user?.memory.find(i => i.id === selectedMemory);
+
+  const { data: memory } = useGetMemoryFromStorage(selectedMemoryDetail?.dataUrl || '');
+  const { mutateAsync: createAgent } = usePostCreateAgent();
+
   const valid = !!name && !!description && !!socialLink;
 
-  const handleCreate = () => {
+  const handleCreate = async () => {
     const values = getValues();
-    console.log(values);
+    await createAgent({
+      data: memory,
+      walletAddress: user?.walletAddress || '',
+      agentName: values.name,
+      description: values.description,
+      socialLink: values.socialLink,
+    });
+    close();
   };
 
   return (

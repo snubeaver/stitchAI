@@ -1,5 +1,6 @@
 import { useFormContext } from 'react-hook-form';
 
+import { useGetUser } from '@/api/get-user';
 import { color } from '@/assets/color';
 import IconArrowBack from '@/assets/icon/icon-arrow-back.svg';
 import IconArrowNext from '@/assets/icon/icon-arrow-next.svg';
@@ -19,10 +20,12 @@ interface Props {
 export const CreateAgentSelectMemory = ({ handleBack, handleNext }: Props) => {
   const { close } = useDialog('create-agent');
 
+  const { data: user } = useGetUser();
+
   const { setValue, watch } = useFormContext<CreateAgentFormState>();
 
-  const memory = watch('memory');
-  const valid = !!memory;
+  const selectedMemory = watch('memory');
+  const valid = !!selectedMemory;
   const handleSelectMemory = (memory: string) => {
     setValue('memory', memory);
   };
@@ -41,24 +44,15 @@ export const CreateAgentSelectMemory = ({ handleBack, handleNext }: Props) => {
       <div className={style.section}>
         <div className={style.sectionLabel}>Select Memory</div>
         <div className={style.memories}>
-          <div
-            className={style.memory({ selected: memory === '1' })}
-            onClick={() => handleSelectMemory('1')}
-          >
-            DeFi memory trained by Titanium Research - 1
-          </div>
-          <div
-            className={style.memory({ selected: memory === '2' })}
-            onClick={() => handleSelectMemory('2')}
-          >
-            DeFi memory trained by Titanium Research - 2
-          </div>
-          <div
-            className={style.memory({ selected: memory === '3' })}
-            onClick={() => handleSelectMemory('3')}
-          >
-            DeFi memory trained by Titanium Research - 3
-          </div>
+          {user?.memory.map(memory => (
+            <div
+              key={memory.id}
+              className={style.memory({ selected: memory.id === selectedMemory })}
+              onClick={() => handleSelectMemory(memory.id)}
+            >
+              {memory.title}
+            </div>
+          ))}
 
           <div className={style.memoryCreateButton}>
             <IconPlus width={16} height={16} fill={color.blue[100]} />

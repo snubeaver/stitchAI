@@ -39,20 +39,20 @@ export const CreateAgentSelectPlatform = ({ handleNext }: Props) => {
         <div className={style.sectionLabel}>Select Platform</div>
         <div className={style.platforms}>
           <div
-            className={style.platform({ selected: platform === 'eliza_os' })}
-            onClick={() => handleSelectPlatform('eliza_os')}
+            className={style.platform({ selected: platform === 'ELIZA_OS' })}
+            onClick={() => handleSelectPlatform('ELIZA_OS')}
           >
             Eliza OS
           </div>
           <div
-            className={style.platform({ selected: platform === 'virtual' })}
-            onClick={() => handleSelectPlatform('virtual')}
+            className={style.platform({ selected: platform === 'VIRTUALS' })}
+            onClick={() => handleSelectPlatform('VIRTUALS')}
           >
             Virtual
           </div>
           <div
-            className={style.platform({ selected: platform === 'crew_ai' })}
-            onClick={() => handleSelectPlatform('crew_ai')}
+            className={style.platform({ selected: platform === 'CREW_AI' })}
+            onClick={() => handleSelectPlatform('CREW_AI')}
           >
             Crew AI
           </div>
