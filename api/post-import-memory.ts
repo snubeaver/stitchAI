@@ -9,7 +9,7 @@ type Request = {
 
   userWalletAddress: string;
   type: MemoryType;
-  platform: MemoryPlatform;
+  platform?: MemoryPlatform;
   title: string;
   description?: string;
   price: number;
@@ -24,7 +24,7 @@ export const usePostImportMemory = () => {
     formData.append('file', req.file);
     formData.append('userWalletAddress', req.userWalletAddress);
     formData.append('type', req.type);
-    formData.append('platform', req.platform);
+    formData.append('platform', req.platform || MemoryPlatform.ELIZA_OS);
     formData.append('title', req.title);
     formData.append('description', req.description || '');
     formData.append('price', req.price.toString());

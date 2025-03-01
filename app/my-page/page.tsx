@@ -58,7 +58,9 @@ export default function Page() {
               <ButtonPrimary
                 text="Import"
                 iconLeading={<IconDownload width={20} height={20} fill={color.white[100]} />}
-                onClick={() => openDialogImportMemory()}
+                onClick={() => {
+                  openDialogImportMemory();
+                }}
               />
             </div>
             <div className={style.cards}>
