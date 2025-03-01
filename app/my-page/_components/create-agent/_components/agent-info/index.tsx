@@ -38,8 +38,10 @@ export const CreateAgentAgentInfo = ({ handleBack }: Props) => {
 
   const handleCreate = async () => {
     const values = getValues();
+
     await createAgent({
       data: memory,
+      memoryId: values.memory,
       walletAddress: user?.walletAddress || '',
       agentName: values.name,
       description: values.description,

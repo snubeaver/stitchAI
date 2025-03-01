@@ -6,6 +6,7 @@ import { api } from '@/libs/axios';
 type Request = {
   data: string;
 
+  memoryId: string;
   walletAddress: string;
   agentName: string;
   description?: string;
