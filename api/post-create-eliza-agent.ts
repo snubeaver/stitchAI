@@ -4,26 +4,25 @@ import { AxiosError } from 'axios';
 import { api } from '@/libs/axios';
 
 type Request = {
-  data: string;
-
+  telegram: string;
+  agentName: string;
+  description: string;
+  socialLink: string;
   memoryId: string;
   walletAddress: string;
-  agentName: string;
-  description?: string;
-  socialLink?: string;
 };
 
-export const usePostCreateAgent = () => {
+export const usePostCreateElizaAgent = () => {
   const queryClient = useQueryClient();
 
   const mutationFn = async (req: Request): Promise<void> => {
-    await api.post(`/crewai/add`, req);
+    await api.post(`/deployment/create-eliza`, req);
 
     await queryClient.invalidateQueries({ queryKey: ['user'] });
   };
 
   const data = useMutation<void, AxiosError<Request>, Request>({
-    mutationKey: ['create-agent'],
+    mutationKey: ['create-eliza-agent'],
     mutationFn,
   });
 

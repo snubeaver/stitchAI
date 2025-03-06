@@ -12,10 +12,12 @@ import { truncateAddress } from '@/libs/address';
 import { formatNumeric } from '@/libs/numeric';
 
 import * as style from './style.css';
+import { useEthTransfer } from '@/api/buy-transaction';
 
 export const MemoryMarketCardDetail = () => {
   const { params, close } = useDialog('memory-market-card');
   const { memoryId, type } = params || {};
+  const receiver = "0xba55bdbf959df826da6c35487eb15fad2164662d"
 
   const { data: agentMemory } = useGetMarketAgentMemory();
   const { data: externalMemory } = useGetMarketExternalMemory();
@@ -24,6 +26,26 @@ export const MemoryMarketCardDetail = () => {
     type === 'AGENT'
       ? agentMemory?.find(i => i.id === memoryId)
       : externalMemory?.find(i => i.id === memoryId);
+
+  const { transfer, isReady } = useEthTransfer({
+    onSuccess: (txHash) => {
+      console.log('>>> ', txHash);
+    },
+    onError: (error) => {
+      console.error(error);
+    },
+  });
+
+  const handleBuy = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      await transfer(receiver as `0x${string}`, '0.001');
+    } catch (error) {
+      // Error is already handled by onError callback
+      console.error(error);
+    }
+      };
 
   if (!memoryDetail) return;
   return (
@@ -54,7 +76,7 @@ export const MemoryMarketCardDetail = () => {
           <div className={style.priceLabel}>/month</div>
         </div>
 
-        <ButtonPrimary text="Buy Now" />
+        <ButtonPrimary text="Buy Now" onClick={handleBuy} />
       </div>
 
       {memoryDetail.description && (

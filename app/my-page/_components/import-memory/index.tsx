@@ -15,12 +15,13 @@ import { useDialog } from '@/hooks/use-dialog';
 import * as style from './style.css';
 
 interface FormState {
+  memoryType: 'AGENT' | 'EXTERNAL';
   platform: string;
   title: string;
   description: string;
-
   file: File | null;
 }
+
 export const ImportMemory = () => {
   const { address } = useAccount();
 
@@ -28,11 +29,16 @@ export const ImportMemory = () => {
   const { mutateAsync: downloadRunningInstanceMemory } = useGetRunningInstanceMemory();
 
   const { close } = useDialog('import-memory');
-  const { register, setValue, getValues, watch } = useForm<FormState>();
+  const { register, setValue, getValues, watch } = useForm<FormState>({
+    defaultValues: {
+      memoryType: 'AGENT'
+    }
+  });
 
   const file = watch('file');
   const platform = watch('platform');
   const title = watch('title');
+  const memoryType = watch('memoryType');
 
   const handleRemoveFile = () => {
     setValue('file', null);
@@ -46,22 +52,22 @@ export const ImportMemory = () => {
     onDrop,
   });
 
-  const valid = !!file && !!platform && !!title;
+  const valid = !!file && !!title && !!memoryType;
 
   const { mutateAsync: importMemory, isPending } = usePostImportMemory();
 
   const handleImportMemory = async () => {
     if (!valid) return;
-    const { file, platform, title, description } = getValues();
+    const { file, platform, title, description, memoryType } = getValues();
 
     await importMemory({
       file: file as File,
       userWalletAddress: address as string,
-      type: 'AGENT' as MemoryType,
-      platform: platform as MemoryPlatform,
+      type: memoryType as MemoryType,
+      platform: memoryType === 'AGENT' ? platform as MemoryPlatform : undefined,
       title,
       description,
-      price: 0,
+      price: 1,
     });
     close();
   };
@@ -69,13 +75,13 @@ export const ImportMemory = () => {
   const handleDownloadRunningInstanceMemory = async (instanceName: string) => {
     const res = await downloadRunningInstanceMemory(instanceName);
 
-    const targetData = res.csv;
+    const targetData = res.toString();
     const blob = new Blob([targetData], { type: 'text/plain' });
 
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `${res.filename}.data`;
+    link.download = `${instanceName}-memories-${new Date().toISOString()}.csv`;
 
     document.body.appendChild(link);
     link.click();
@@ -96,6 +102,28 @@ export const ImportMemory = () => {
       </div>
 
       <div className={style.section}>
+        <div className={style.sectionLabel}>Select Memory Type</div>
+        <div className={style.radioGroup}>
+          <label className={style.radioLabel}>
+            <input
+              type="radio"
+              value="AGENT"
+              {...register('memoryType')}
+            />
+            Agent Memory
+          </label>
+          <label className={style.radioLabel}>
+            <input
+              type="radio"
+              value="EXTERNAL"
+              {...register('memoryType')}
+            />
+            External Memory
+          </label>
+        </div>
+      </div>
+
+      <div className={style.section}>
         <div className={style.sectionLabel}>Title</div>
         <input className={style.input} type="text" {...register('title')} />
       </div>
@@ -105,29 +133,31 @@ export const ImportMemory = () => {
         <textarea className={style.textarea} {...register('description')} />
       </div>
 
-      <div className={style.section}>
-        <div className={style.sectionLabel}>Select Platform</div>
-        <div className={style.platforms}>
-          <div
-            className={style.platform({ selected: platform === 'ELIZA_OS' })}
-            onClick={() => setValue('platform', 'ELIZA_OS')}
-          >
-            Eliza OS
-          </div>
-          <div
-            className={style.platform({ selected: platform === 'VIRTUALS' })}
-            onClick={() => setValue('platform', 'VIRTUALS')}
-          >
-            Virtual
-          </div>
-          <div
-            className={style.platform({ selected: platform === 'CREW_AI' })}
-            onClick={() => setValue('platform', 'CREW_AI')}
-          >
-            Crew AI
+      {memoryType === 'AGENT' && (
+        <div className={style.section}>
+          <div className={style.sectionLabel}>Select Platform</div>
+          <div className={style.platforms}>
+            <div
+              className={style.platform({ selected: platform === 'ELIZA_OS' })}
+              onClick={() => setValue('platform', 'ELIZA_OS')}
+            >
+              Eliza OS
+            </div>
+            <div
+              className={style.platform({ selected: platform === 'VIRTUALS' })}
+              onClick={() => setValue('platform', 'VIRTUALS')}
+            >
+              Virtual
+            </div>
+            <div
+              className={style.platform({ selected: platform === 'CREW_AI' })}
+              onClick={() => setValue('platform', 'CREW_AI')}
+            >
+              Crew AI
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       <div className={style.section}>
         <div className={style.sectionLabel}>Upload Your File</div>
@@ -165,20 +195,24 @@ export const ImportMemory = () => {
           )}
         </div>
 
+        {memoryType === 'AGENT' && (
         <div className={style.section}>
-          <div className={style.sectionLabel2}>or Download running agent memory(optional)</div>
+          <div className={style.sectionLabel2}>(Optional) Download running agent memory</div>
           <div className={style.memoryList}>
             {runningInstances?.deployments.map(instance => (
-              <div
-                key={instance.jobId}
-                className={style.memoryItem}
-                onClick={() => handleDownloadRunningInstanceMemory(instance.jobId)}
-              >
-                {instance.instanceName}
-              </div>
-            ))}
+              instance.instanceName.startsWith('eliza-') ? (
+                <div
+                  key={instance.jobId}
+                  className={style.memoryItem}
+                  onClick={() => handleDownloadRunningInstanceMemory(instance.instanceName)}
+                >
+                  {instance.instanceName}
+                </div>
+              ) : null
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       <div className={style.footer}>

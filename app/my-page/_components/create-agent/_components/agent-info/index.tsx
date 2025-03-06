@@ -13,6 +13,7 @@ import { useDialog } from '@/hooks/use-dialog';
 
 import { CreateAgentFormState } from '../../_interfaces';
 import * as style from './style.css';
+import { usePostCreateElizaAgent } from '@/api/post-create-eliza-agent';
 
 interface Props {
   handleBack: () => void;
@@ -27,24 +28,42 @@ export const CreateAgentAgentInfo = ({ handleBack }: Props) => {
   const name = watch('name');
   const description = watch('description');
   const socialLink = watch('socialLink');
+  const platform = watch('platform');
 
   const selectedMemory = watch('memory');
   const selectedMemoryDetail = user?.memory.find(i => i.id === selectedMemory);
 
   const { data: memory } = useGetMemoryFromStorage(selectedMemoryDetail?.dataUrl || '');
   const { mutateAsync: createAgent } = usePostCreateAgent();
+  const { mutateAsync: createElizaAgent } = usePostCreateElizaAgent();
 
-  const valid = !!name && !!description && !!socialLink;
+  const valid = !!name && !!description && !!socialLink && !!platform;
 
   const handleCreate = async () => {
     const values = getValues();
-    await createAgent({
-      data: memory,
-      walletAddress: user?.walletAddress || '',
-      agentName: values.name,
-      description: values.description,
-      socialLink: values.socialLink,
-    });
+
+    console.log(values);
+
+    if (values.platform === 'CREW_AI') {
+      await createAgent({
+        data: memory,
+        memoryId: values.memory,
+        walletAddress: user?.walletAddress || '',
+        agentName: values.name,
+        description: values.description,
+        socialLink: values.socialLink,
+      });
+    } else if (values.platform === 'ELIZA_OS') {
+      await createElizaAgent({
+        telegram: values.telegramBotToken || '',
+        agentName: values.name,
+        description: values.description,
+        socialLink: values.socialLink,
+        memoryId: values.memory,
+        walletAddress: user?.walletAddress || '',
+      });
+    }
+
     close();
   };
 
@@ -70,6 +89,10 @@ export const CreateAgentAgentInfo = ({ handleBack }: Props) => {
       <div className={style.section}>
         <div className={style.sectionLabel}>Social Link</div>
         <input className={style.input} type="text" {...register('socialLink')} />
+      </div>
+      <div className={style.section}>
+        <div className={style.sectionLabel}>Telegram Bot Token</div>
+        <input className={style.input} type="text" {...register('telegramBotToken')} />
       </div>
 
       <div className={style.footer}>

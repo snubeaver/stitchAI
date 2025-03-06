@@ -215,3 +215,16 @@ export const memoryItem = style([
     cursor: 'pointer',
   },
 ]);
+
+export const radioGroup = style({
+  display: 'flex',
+  gap: '20px',
+  marginTop: '12px'
+});
+
+export const radioLabel = style({
+  display: 'flex',
+  alignItems: 'center',
+  gap: '8px',
+  cursor: 'pointer',  
+});

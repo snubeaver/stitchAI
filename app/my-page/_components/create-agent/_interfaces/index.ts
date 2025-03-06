@@ -5,4 +5,6 @@ export interface CreateAgentFormState {
   name: string;
   description: string;
   socialLink: string;
+
+  telegramBotToken?: string;
 }
